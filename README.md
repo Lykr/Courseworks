@@ -1,2 +1,2 @@
 # Courseworks
-Courseworks in university period
+Courseworks during university
