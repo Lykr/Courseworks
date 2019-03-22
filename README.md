@@ -1,2 +1,2 @@
-# Courseworks
-Courseworks during university
+# Projects
+Some projects I have done in university.
