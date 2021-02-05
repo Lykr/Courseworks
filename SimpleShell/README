@@ -1,0 +1,17 @@
+Author: WANG Chen
+BUPT number: 2015213086
+Date: 14 May, 2019
+Brief: This is a simple shell program for coursework.
+
+Notes:
+- This shell can execute “cd”, “ls”, “mkdir”, “rm”, “rmdir” and many other functions.
+- You can use the command "export "msh_cp=<the_command_prompt_ you_want>"" to modify command prompt before running the shell.
+- You can input “help” to get information about built-in functions.
+
+File Introduction:
+    ~All documents except 'README' is write by LATEX, we also provide pdf version for view.
+    “RequirementAnalysis”: Requirement analysis of the shell program.
+    “DetailDesign”: Detail design of components in the shell.
+    “TestReport”: Test report of the shell.
+    “Summary”: A development summary of the shell.
+    “UserManual”: Write for users to let them know how to use this shell.

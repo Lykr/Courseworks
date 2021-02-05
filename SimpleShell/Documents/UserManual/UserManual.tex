@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\pagestyle{headings}
+
+\title{USER MANUAL}
+\author{WANG Chen, 2015213086, wangchen@bupt.edu.cn}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+\section{INTRODUCTION}
+
+This is a user manual for simple shell program named msh.
+The shell program is a course assignment in \emph{Advanced Programming in the UNIX Environment}.
+It will make us have a deeper understanding in UNIX C programming, after we finish this program.
+This document introduce the shell program and illustrate how to use the shell program.
+
+\section{HOW TO USE}
+
+\subsection{Start the shell}
+
+\begin{enumerate}
+\item Open the terminal of system.
+\item Get to the folder of \verb|msh|.
+\item Enter \verb|./msh| to start program.
+\end{enumerate}
+
+\subsection{Run Command}
+
+After you start msh, you can use it as normal shell program.
+msh can run most of command, like \verb|cd|, \verb|ls| and so on.
+You can enter \verb|help| to get more information about msh, and built-in functions.
+
+\subsection{Run Command in Background}
+
+If you want to run a command in background, then enter an other command immediately.
+You can append a \verb|&| to command for doing that.
+For example, \verb|./msh &| will run a new msh in background.
+
+\subsection{Input \& Output Redirection}
+
+The shell can implement input and output redirection by using \verb|<| and \verb|>| symbol.
+User can use \verb|command > <output_file>| to write the result of \verb|command| to \verb|<output_file>|.
+Or you can use \verb|command < <input_file>| to take \verb|<input_file>| as input of the \verb|command|.
+And you can even combine them like, \verb|command| \verb|<| \verb|<input_file>| \verb|>| \verb|<output_file>| to take \verb|<input_file>| as input and write output to the \verb|<output_file>|.
+
+\subsection{Change Command Prompt}
+
+User can modify command prompt when the shell is closing.
+
+\begin{enumerate}
+\item Close the shell program, if it is running.
+\item use command \verb|export "msh_cp=<new command prompt>"| to change the command prompt.
+\item Enter \verb|./msh| to start program, and <new command prompt> will be presented.
+\end{enumerate}
+
+\subsection{Close Program}
+
+User can close the shell by entering \verb|exit| command or \verb|Ctrl + C| or \verb|Ctrl + D| key combination.
+
+\section{FAQ}
+
+\begin{itemize}
+\item Why some command like \verb|jobs| can not run in this shell program?
+
+This program is a simple implementation of shell.
+It is not implement all functions which other shell program have.
+
+\item How to make the program running in background return to foreground?
+
+There is not way to do this.
+So you best not to run some command which cannot finished in background.
+Otherwise, you need to use ``Resources Manager'' to shut down the program you have run.
+
+\end{itemize}
+
+\newpage
+\section{CONTACT INFORMATION}
+
+\begin{itemize}
+\item Author: WANG Chen
+\item Location: Beijing University of Posts and Telecommunications No.10 Xitucheng Road, Haidian District, Beijing, China.
+\item Email: wangchen@bupt.edu.cn
+\item Telephone no.: 15011090XXX
+\end{itemize}
+
+\end{document}

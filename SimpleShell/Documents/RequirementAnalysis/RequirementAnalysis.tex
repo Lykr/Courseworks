@@ -1,0 +1,116 @@
+\documentclass{article}
+
+\pagestyle{headings}
+
+\title{REQUIREMENT ANALYSIS}
+\author{WANG Chen, 2015213086, wangchen@bupt.edu.cn}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+\section{INTRODUCTION}
+This is a requirement analysis document for a simple shell program named msh.
+The shell program is a course assignment in \emph{Advanced Programming in the UNIX Environment}.
+It will make us have a deeper understanding in UNIX C programming, after we finish this program.
+A summary of requirements of the shell program will be presented below.
+And detailed implementation of these requirements are presented in DETAILED DESIGN document.
+
+\newpage
+\section{FUNCTIONAL REQUIREMENTS}
+
+\subsection{Command Prompt}
+\subsubsection{Description}
+The program is executed from the console and a command prompt is displayed when it is started. For example, "\verb|->|". Users can change the command prompt by assigning values to specific environment variables.
+
+\subsubsection{Case}
+\begin{enumerate}
+\item User input \verb|./msh| to run the shell program.
+\item The terminal will present a \verb|->| to indicate that the shell program is running.
+\item User close the shell.
+\item User input \verb|export "msh_cp=<new_command_prompt>"|.
+\item User input \verb|./msh| to run the shell.
+\item \verb|new_command_prompt| will be present.
+\end{enumerate}
+
+\subsection{Close Program}
+\subsubsection{Description}
+This program can be shut down normally by a special command or key combination.
+
+\subsubsection{Case}
+\begin{enumerate}
+\item User input \verb|./msh| to run the shell program.
+\item User input \verb|Ctrl + C|, \verb|Ctrl + D| or \verb|exit| to shut down the shell.
+\item User return to the terminal
+\end{enumerate}
+
+\subsection{Runs in Background}
+\subsubsection{Description}
+Provide background operation mechanism. Tasks submitted by users can be made to run in the background by some instructions, such as: \verb|-> bg job1 <CR>| which will make \verb|job1| run in the background and return a new prompt to the user immediately.
+
+\subsubsection{Case}
+\begin{enumerate}
+\item User input \verb|./msh| to run the shell program.
+\item User input \verb|command &| to run this command in background.
+\end{enumerate}
+
+\subsection{Output \& Input Redirection}
+\subsubsection{Description}
+Write all output of task to a file by specifying file names instead of sending them to standard output.
+By specifying the file name, the task can obtain the required data from the corresponding file, rather than from the standard input.
+
+\subsubsection{Output Redirection Case}
+\begin{enumerate}
+\item User input \verb|./msh| to run the shell program.
+\item User input \verb|command > cmd_out|
+\item A file named \verb|cmd_out| will be created and its content contains the output of the command.
+\end{enumerate}
+
+\subsubsection{Input Redirection Case}
+\begin{enumerate}
+\item User input \verb|./msh| to run the shell program.
+\item User input \verb|command < cmd_input|
+\item The command will take the content of \verb|cmd_input| as input.
+\end{enumerate}
+
+\subsubsection{Output \& Input Redirection Case}
+\begin{enumerate}
+\item User input \verb|./msh| to run the shell program.
+\item User input \verb|command < cmd_input > cmd_output|.
+\item The command will take the content of \verb|cmd_input| as input, and write output to the file named \verb|cmd_output|.
+\end{enumerate}
+
+\subsection{Other Command}
+\subsubsection{Description}
+The shell can execute some command like \verb|cd|, \verb|ls|, \verb|mkdir|, \verb|rm| and so on.
+
+\subsubsection{Case}
+\begin{enumerate}
+\item User input \verb|./msh| to run the shell program.
+\item User input \verb|ls|.
+\item The list of file and dir in current dir will be presented.
+\end{enumerate}
+
+\newpage
+\section{NON-FUNCTIONAL REQUIREMENTS}
+
+\begin{itemize}
+\item The program code is easy to read.
+\item The program is robust.
+\end{itemize}
+
+\newpage
+\section{DEVELOPMENT ENVIRONMENT}
+
+\begin{itemize}
+\item Hardware: Macbook pro 2018
+\item System: Mac OS 10.14.4
+\item Code Software: Visual Studio Code
+\item Compiler: GCC 4.2.1
+\end{itemize}
+
+\end{document}

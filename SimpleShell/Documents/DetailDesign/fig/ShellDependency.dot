@@ -1,0 +1,13 @@
+digraph ShellDependency {
+    rankdir = LR;
+    "main()" -> {"msh_load_config()", "msh_run_for_command()", "free()"};
+    "msh_load_config()" -> {"getenv()"};
+    "msh_run_for_command()" -> {"msh_read_line()", "msh_split_line()", "msh_execute()", "free()", "printf()"};
+    "msh_read_line()" -> {"getline()", "printf()", "exit()"};
+    "msh_split_line()" -> {"malloc()", "fprintf()", "exit()", "strsep()", "strcmp()", "realloc()"};
+    "msh_execute()" -> {"msh_builtin_func_num()", "strcmp()", "fork()", "open()", "dup2()", "close()", "creat()", "execvp()", "perror()", "exit()", "waitpid()", "msh_cd()", "msh_help()", "msh_exit()"};
+    "msh_help()" -> {"printf()", "strcmp()"};
+    "msh_cd()" -> {"fprintf()", "chdir()", "perror()"};
+    "msh_exit()" -> {};
+    "msh_builtin_func_num()" -> {};
+}
